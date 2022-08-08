@@ -50,7 +50,7 @@ interface Column {
     key : string,
 }
 
-export const RepositoryList = () => {
+export const DataTable = () => {
     // const { t, i18n } = useTranslation();
     const [columnNames, setColumnNames] = useState([{ key: 'mission_name' ,name : 'Mission name', visible : true}, { key: 'rocket_name', name : 'Rocket name', visible : true}, { key: 'launch_date', name : 'Launch date', visible: true}, { key : 'success', name : 'Success', visible: true}]);
 

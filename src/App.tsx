@@ -1,5 +1,5 @@
 import React from 'react';
-import {RepositoryList} from './repositoryList'
+import {DataTable} from './DataTable'
 import './App.css';
 
 import { DetailsComponent } from "./DetailsComponent";
@@ -12,7 +12,7 @@ function App() {
     <div>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<RepositoryList/>} />
+                <Route path="/" element={<DataTable/>} />
                 <Route path="/detail" element={<DetailsComponent/>} />
             </Routes>
         </BrowserRouter>

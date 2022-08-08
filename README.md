@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# Zadanie - React app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Vypracovane úlohy
 
-## Available Scripts
+### 1. Pomocou Urql zobraziť tabuľku, kde budú zobrazené misie spoločnosti SpaceX
+Tu som pre graphql request nastavil limit na 20 záznamov, z dôvodu aby nemuselo načitávať všetky údaje.
+### 2. Implementovanie prepínania stĺpcov
+Vytvoril som pár checkboxov s názvami stĺpcov, ktoré je možné zaškrutnúť, a následne sa daný stĺpec zobrazí alebo skryje
+v tabuľke.
 
-In the project directory, you can run:
+### 5. Implementovať detail misie
+V každom riadku tabuľky sa nachádza tlačidlo, ktoré presmeruje používateľa na novú stránku s detailom misie (jej názov a video)
 
-### `npm start`
+## Neimplementované úlohy
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 3. Implementovat prepínanie jazyka EN/SK
+Túto úloha nebola splnená iba z časového dôvodu.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Popis**: úlohu som začal riešiť, no natrafil som na problém v súbore i18n.js.
+Princíp je však taký, že treba nastaviť správne súbor i18n.js a následne povytvárať adresáre public/locales/skratka_jazyka
+a následne použit useTranslation(), z ktorého by som si zobral funkciu 't', ktorá ako kľúč berie kľúč vo vytvorenom adresáry,
+pod ktorým je uložená hodnota pre daný nastavený jazyk.
 
-### `npm test`
+### 4. Implementovať infinite-scrolling
+Túto úloha nebola splnená z časového dôvodu a z problémami pri inštalácií niektorých komponentov.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Ako by som to riešil:**
+Použil by som najskôr asi https://www.npmjs.com/package/react-infinite-scroll-component.
+Ktorý by mi obaloval tabuľku a za pomoci prop refreshFunction, kde by som si namapoval moju funkciu
+na stiahnutie dodatočných dát z graphql api.
